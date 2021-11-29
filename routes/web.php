@@ -13,6 +13,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [App\Http\Controllers\CurrencyController::class, 'index'])->name('index');
+Route::get('/reload', [App\Http\Controllers\CurrencyController::class, 'reload'])->name('reload');
